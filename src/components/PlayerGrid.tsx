@@ -1,22 +1,12 @@
 import { useState, useEffect } from 'react';
 import PlayerCard, { type Player } from './PlayerCard.tsx';
+import { generatePlayers } from '../utils/gameLogic';
+import type { GameSettings } from './SettingsModal';
 import './PlayerGrid.css';
 
 interface PlayerGridProps {
-  // You can tighten this type later to match your GameSettings
-  settings: unknown;
+  settings: GameSettings;
 }
-
-// Helper to create exactly 6 players
-const createPlayers = (): Player[] => {
-  const NUM_PLAYERS = 6;
-  return Array.from({ length: NUM_PLAYERS }, (_, index) => ({
-    id: index + 1,
-    name: `Player ${index + 1}`,
-    isImposter: false,
-    word: '',
-  }));
-};
 
 function PlayerGrid({ settings }: PlayerGridProps) {
   const [players, setPlayers] = useState<Player[]>([]);
@@ -24,14 +14,14 @@ function PlayerGrid({ settings }: PlayerGridProps) {
   const [cardRevealed, setCardRevealed] = useState(false);
 
   useEffect(() => {
-    const newPlayers = createPlayers();
+    const newPlayers = generatePlayers(settings);
     setPlayers(newPlayers);
     setCurrentPlayerIndex(0);
     setCardRevealed(false);
   }, [settings]);
 
   const handleRegenerate = () => {
-    const newPlayers = createPlayers();
+    const newPlayers = generatePlayers(settings);
     setPlayers(newPlayers);
     setCurrentPlayerIndex(0);
     setCardRevealed(false);

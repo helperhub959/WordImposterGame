@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import RevealCard from './RevealCard';
+import { getRandomFrontText } from '../data/words';
 import './PlayerCard.css';
 
 export interface Player {
@@ -17,7 +18,14 @@ interface PlayerCardProps {
 
 function PlayerCard({ player, frontText, onRevealed }: PlayerCardProps) {
   const [flipped, setFlipped] = useState(false);
-  const displayFrontText = frontText || 'Flip it!';
+  const displayFrontText = frontText || getRandomFrontText();
+
+  const getBackWord = () => {
+    if (player.isImposter) {
+      return 'IMPOSTER';
+    }
+    return player.word;
+  };
 
   const handleFlip = () => {
     if (!flipped) {
@@ -33,7 +41,7 @@ function PlayerCard({ player, frontText, onRevealed }: PlayerCardProps) {
       </div>
       <RevealCard
         frontText={displayFrontText}
-        backWord={player.word}
+        backWord={getBackWord()}
         onFlip={handleFlip}
       />
     </div>
