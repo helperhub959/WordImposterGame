@@ -6,12 +6,21 @@
 //     BASIC WORD BANK (General)
 // ----------------------------------
 export const generalWords = [
-    "Pencil", "Apple", "Bridge", "Laptop", "River", "Mountain", "School",
-    "Library", "Camera", "Garden", "Village", "Doctor", "Phone", "Bottle",
-    "Keyboard", "Window", "Carpet", "Market", "Airplane", "Money",
-    "Mirror", "Candle", "Paper", "Cloud", "Rocket", "Planet", "Galaxy",
-    "Hospital", "Teacher", "Ocean", "Forest", "City", "Country"
-  ];
+  "Pencil", "Apple", "Bridge", "Laptop", "River", "Mountain", "School",
+  "Library", "Camera", "Garden", "Village", "Doctor", "Phone", "Bottle",
+  "Keyboard", "Window", "Carpet", "Market", "Airplane", "Money",
+  "Mirror", "Candle", "Paper", "Cloud", "Rocket", "Planet", "Galaxy",
+  "Hospital", "Teacher", "Ocean", "Forest", "City", "Country",
+  "Chair", "Table", "Clock", "Beach", "Desert", "Island", "Castle",
+  "Engine", "Battery", "Charger", "Backpack", "Shoes", "Umbrella",
+  "Notebook", "Magazine", "Newspaper", "Artist", "Engineer", "Pilot",
+  "Chef", "Farmer", "Scientist", "Police", "Firefighter", "Judge",
+  "Temple", "Museum", "Stadium", "Theater", "Restaurant", "Cafe",
+  "Train", "Bus", "Bicycle", "Helicopter", "Submarine", "Boat",
+  "Rainbow", "Storm", "Thunder", "Lightning", "Snow", "Volcano",
+  "Diamond", "Gold", "Silver", "Treasure", "Map", "Compass"
+];
+
   
   // ----------------------------------
   //        EASY WORD LIST
